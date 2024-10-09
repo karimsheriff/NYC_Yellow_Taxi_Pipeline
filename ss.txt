@@ -1,0 +1,61 @@
+import requests
+import json
+api_url="https://randomuser.me/api/"
+response=requests.get(api_url)
+data_json=response.json()
+output_data = {"results": []}
+user_data=data_json['results']
+
+for user_data in user_data:
+    user_dict = {
+        "name": f"{user_data['name']['first']} {user_data['name']['last']}",
+        "id": user_data["id"]["value"],
+        "age": user_data["dob"]["age"],
+        "gender": user_data["gender"],
+        "place": f"{user_data['location']['city']}, {user_data['location']['state']}",
+        "country": user_data['location']['country'],
+        "email": user_data["email"],
+        "phone number": user_data["phone"]
+    }
+
+    output_data["results"].append(user_dict)
+
+user_json=json.dumps(user_dict)
+
+-----------------------------------------------------------------------------------------------------------------------
+
+import requests
+import pandas as pd
+
+# Base URL for the taxi data
+base_url = "https://d37ci6vzurychx.cloudfront.net/trip-data"
+
+# Only process yellow taxi data
+taxi_type = "yellow"
+months = [f"{month:02d}" for month in range(1, 7)]  # ['01', '02', ..., '06']
+
+# List to store DataFrames for each month
+all_data = []
+
+# Loop through each month in 2024
+for month in months:
+    # Generate the URL for each month
+    url = f"{base_url}/{taxi_type}_tripdata_2024-{month}.parquet"
+    print(f"Downloading {taxi_type} taxi data for 2024-{month}...")
+
+    # Download the file content
+    response = requests.get(url)
+    if response.status_code == 200:
+        # Read the downloaded Parquet data directly into a DataFrame
+        df = pd.read_parquet(url, engine='pyarrow')
+        all_data.append(df)  # Append DataFrame to the list
+        print(f"Data for {taxi_type} taxi for 2024-{month} has been read.")
+    else:
+        print(f"Failed to download file. Status code: {response.status_code}")
+
+# Concatenate all DataFrames for the yellow taxi type
+combined_df = pd.concat(all_data, ignore_index=True)
+# Write the combined DataFrame to JSON
+json_file_name = r"D:\NYC/yellow_tripdata_2024.json"
+combined_df.to_json(json_file_name, orient='records', lines=True)
+print(f"{json_file_name} has been created from yellow taxi data.")

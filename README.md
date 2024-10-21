@@ -10,7 +10,7 @@ The pipeline is implemented using:
 - **Spark Streaming** for consuming and processing data.
 - **MySQL** for storing raw data as a staging layer.
 - **PySpark** for data cleaning, transformation, and normalization.
-- **Hive** for creating a normalized **Star schema** data warehouse.
+- **Hive** for creating a **Star schema** data warehouse.
 - **Power BI** for data analysis and visualization.
 
 ## Architecture

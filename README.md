@@ -35,7 +35,8 @@ The pipeline is implemented using:
   
 ## Data Warehouse Overview:
 The Star Schema employed in our data warehouse facilitates efficient analysis of NYC Yellow Taxi trip data. This design supports insightful analysis across various dimensions, such as vendor, pickup/dropoff times, payment methods, and rate codes, enabling detailed exploration of trip-related metrics.
-<img src="Star_Schema_DWH.png">
+
+<img src="Data Warehouse/Star_Schema_DWH.png">
 
 ### Fact Table:
 

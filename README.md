@@ -14,7 +14,7 @@ The pipeline is implemented using:
 - **Power BI** for data analysis and visualization.
 
 ## Architecture
-<img src="Dataflow.png">
+<img src="Architecture.png">
 
 ### Pipeline Flow:
 

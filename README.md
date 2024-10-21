@@ -9,9 +9,9 @@ The pipeline is implemented using:
 - **Apache Kafka** for real-time data ingestion.
 - **Spark Streaming** for consuming and processing data.
 - **MySQL** for storing raw data as a staging layer.
-- **PySpark** for data cleaning and transformation.
+- **PySpark** for data cleaning, transformation, and normalization.
 - **Hive** for creating a normalized **Star schema** data warehouse.
-- **Power BI** for analysis and visualization.
+- **Power BI** for data analysis and visualization.
 
 ## Architecture
 
@@ -31,16 +31,6 @@ The pipeline is implemented using:
 
 4. **Data Analysis and Visualization**:
    - Using **Power BI**, insights are derived from the Hive warehouse, including key metrics like trip duration, fare amounts, trip distance, and more.
-
-## Technologies Used
-
-- **Python**: For data downloading and Kafka producer.
-- **Apache Kafka**: For data ingestion and real-time streaming.
-- **Apache Spark Streaming**: For processing streaming data in real time.
-- **MySQL**: For staging raw data.
-- **PySpark**: For cleaning, transforming, and loading data into Hive.
-- **Apache Hive**: For data warehousing and storing the normalized Star schema.
-- **Power BI**: For visualization and reporting.
 
 
 

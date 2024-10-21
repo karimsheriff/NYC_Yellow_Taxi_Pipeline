@@ -59,7 +59,7 @@ The relationships between these tables provide a robust framework for analyzing 
 ## NYC Yellow Taxi Data Analysis and Dashboard
 In this phase, I focused on creating an interactive Power BI dashboard to visualize insights derived from the NYC Yellow Taxi dataset (January 2024 - June 2024). This dashboard offers an intuitive interface that allows stakeholders to explore key metrics, trends, and patterns in taxi trip data, enabling data-driven decision-making.
 
-<img src="Data Warehouse/NYC_Dashboard.png">
+<img src="NYC_Dashboard.png">
 
 ### Dashboard Overview
 
